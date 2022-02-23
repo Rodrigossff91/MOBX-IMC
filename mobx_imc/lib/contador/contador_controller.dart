@@ -1,4 +1,5 @@
 import 'package:mobx/mobx.dart';
+import 'package:mobx_imc/model/full_name.dart';
 
 class ContadorController {
   var _counter = Observable(0);
@@ -32,33 +33,4 @@ class ContadorController {
     _fullName.value =
         _fullName.value.copyWith(first: "Rodrigo", last: "Ferreira");
   }
-}
-
-class FullName {
-  String first;
-  String last;
-  FullName({
-    required this.first,
-    required this.last,
-  });
-
-  FullName copyWith({
-    String? first,
-    String? last,
-  }) {
-    return FullName(
-      first: first ?? this.first,
-      last: last ?? this.last,
-    );
-  }
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(this, other)) return true;
-
-    return other is FullName && other.first == first && other.last == last;
-  }
-
-  @override
-  int get hashCode => first.hashCode ^ last.hashCode;
 }
