@@ -61,6 +61,17 @@ mixin _$ModeloObservadoController on _ModeloObservadoControllerBase, Store {
   }
 
   @override
+  void selectedroduct(int index) {
+    final _$actionInfo = _$_ModeloObservadoControllerBaseActionController
+        .startAction(name: '_ModeloObservadoControllerBase.selectedroduct');
+    try {
+      return super.selectedroduct(index);
+    } finally {
+      _$_ModeloObservadoControllerBaseActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
   String toString() {
     return '''
 products: ${products}

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mobx_imc/observables/modelo_observado/modelo_observado_page.dart';
+
+import 'observables/future/future_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: ModeloObservadoPage(),
+      home: FuturePage(),
     );
   }
 }
