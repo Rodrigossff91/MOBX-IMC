@@ -58,4 +58,10 @@ abstract class _ModeloObservadoControllerBase with Store {
   void removeProduct() {
     products.removeAt(0);
   }
+
+  @action
+  void selectedroduct(int index) {
+    var productSelected = products[index].selected;
+    products[index].selected = !productSelected;
+  }
 }

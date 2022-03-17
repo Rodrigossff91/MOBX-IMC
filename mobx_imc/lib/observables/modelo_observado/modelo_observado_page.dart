@@ -25,10 +25,17 @@ class _ModeloObservadoPageState extends State<ModeloObservadoPage> {
                 itemCount: controller.products.length,
                 itemBuilder: ((context, index) {
                   final productStore = controller.products[index];
-                  return CheckboxListTile(
-                      value: productStore.selected,
-                      onChanged: (_) {},
-                      title: Text("${productStore.product.name}"));
+                  return Observer(
+                    builder: (_) {
+                      return CheckboxListTile(
+                          value: productStore.selected,
+                          onChanged: (_) {
+                            controller.selectedroduct(index);
+                          },
+                          title: Text("${productStore.product.name}"));
+                      ;
+                    },
+                  );
                 }),
               );
             },
